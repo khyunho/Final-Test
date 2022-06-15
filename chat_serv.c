@@ -76,7 +76,7 @@ void * handle_clnt(void * arg)
 	int str_len=0, i;
 	char msg[BUF_SIZE];
 
-송
+
 	while((str_len=read(clnt_sock, msg, sizeof(msg)))!=0)
 		send_msg(msg, str_len); // 사용자 모두에게 메세지 보내기
 	// 클라이언트에서 보낸 메세지를 받는다.
@@ -105,7 +105,7 @@ void * handle_clnt(void * arg)
 	return NULL;
 }
 void send_msg(char * msg, int len) // send to all 
-				   // 접속한 모두에게 메세지 전
+				   // 접속한 모두에게 메세지 전송
 {
 	int i;
 	pthread_mutex_lock(&mutx); // clnt_cnt, clnt_socks[] 사용을 위해 mutex 잠금
